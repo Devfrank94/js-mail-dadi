@@ -13,16 +13,31 @@ const arrayEmail = ['ciao@gmail.com',
 
   console.log(arrayEmail);
 
-const userEmail = prompt('Inserisci una mail da verificare')
+const userEmail = prompt('Inserisci una mail da verificare');
 
 let verified = false;
 
-for(let i = 0; i < arrayEmail.length; i++){
+let message;
+
+for(let i = 0; i < arrayEmail.length; i++) {
   console.log(arrayEmail[i]);
-
-  
-
-
-
-
+  let verEmail = arrayEmail[i];
+  if(userEmail === verEmail){
+    verified = true;
+  }
 }
+
+if (verified) {
+  message =`
+  La mail inserita: ${userEmail} è presente in elenco.
+  `
+} else {
+  message =`
+  La mail inserita: ${userEmail} non è presente in elenco.
+  `
+}
+
+document.querySelector('h1').innerHTML = message;
+
+
+
